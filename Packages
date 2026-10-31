@@ -1,0 +1,16 @@
+Package: com.tweedlex.ios6lockclockfont
+Version: 1.1.0
+Architecture: iphoneos-arm
+Maintainer: Tweedlex
+Installed-Size: 316
+Depends: mobilesubstrate, preferenceloader
+Filename: ./debs/com.tweedlex.ios6lockclockfont_1.1.0_iphoneos-arm.deb
+Size: 101602
+MD5sum: 13ec7476edf600e8f48bf12a0129c547
+SHA1: 3a148c70a08876ebfe3be6700e5156ca2d5f33e0
+SHA256: 11a642a2427cc1032bac30aa5b19ddb02b0bbdd9283eaa2144360f86c762736f
+Section: Tweaks
+Description: All-in-one Swiss Army Knife for iOS 6.1.3 Lock Screen: custom clock fonts & sizes, colors, positioning, transparent bars, custom slider text, and UI element toggles.
+Author: Tweedlex
+Name: iOS 6 Lockscreen Customizer
+

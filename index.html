@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweedlex Repo - iOS 6 Tweaks</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #12141a;
+            color: #e4e7eb;
+            display: flex;
+            justify-content: center;
+            padding: 20px 10px;
+        }
+        .container {
+            max-width: 520px;
+            width: 100%;
+        }
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(180deg, #1f2430 0%, #151821 100%);
+            border-radius: 18px;
+            border: 1px solid #2b3242;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,200,255,0.3);
+            margin-bottom: 12px;
+        }
+        h1 { font-size: 24px; color: #fff; margin-bottom: 6px; }
+        p.subtitle { font-size: 14px; color: #8e99a8; margin-bottom: 18px; }
+        .btn-add {
+            display: inline-block;
+            background: linear-gradient(180deg, #00b4db 0%, #0083b0 100%);
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 4px 14px rgba(0, 180, 219, 0.4);
+            transition: transform 0.15s ease;
+        }
+        .btn-add:active { transform: scale(0.97); }
+        .section-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7b889b;
+            margin: 20px 8px 10px;
+            font-weight: 700;
+        }
+        .card {
+            background: #181c26;
+            border: 1px solid #282f40;
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 14px;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+        .card-title { font-size: 18px; font-weight: 600; color: #fff; }
+        .card-version {
+            background: #252e42;
+            color: #00d2ff;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-left: auto;
+        }
+        .card-desc { font-size: 13px; color: #a4b1c2; line-height: 1.5; margin-bottom: 14px; }
+        .features {
+            list-style: none;
+            font-size: 12px;
+            color: #8fa0b5;
+            margin-bottom: 14px;
+        }
+        .features li { margin-bottom: 5px; padding-left: 14px; position: relative; }
+        .features li::before {
+            content: "•";
+            color: #00d2ff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .btn-deb {
+            display: inline-block;
+            background: #262f40;
+            border: 1px solid #37435b;
+            color: #e4e7eb;
+            padding: 8px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #5c6675;
+            margin-top: 30px;
+        }
+        .url-box {
+            background: #0d1017;
+            border: 1px dashed #30394d;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #61afef;
+            word-break: break-all;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="icon" src="CydiaIcon.png" alt="Tweedlex Repo">
+            <h1>Tweedlex Repo</h1>
+            <p class="subtitle">Official Cydia Repository for iOS 6 & Legacy Devices</p>
+            <a class="btn-add" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://tweedlexdev.github.io/cydia-repo/">+ Add to Cydia</a>
+            <div class="url-box">https://tweedlexdev.github.io/cydia-repo/</div>
+        </div>
+
+        <div class="section-title">Available Tweaks</div>
+
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <div class="card-title">iOS 6 Lockscreen Customizer</div>
+                </div>
+                <div class="card-version">v1.1.0</div>
+            </div>
+            <div class="card-desc">
+                All-in-one Swiss Army Knife for iOS 6.1.3 Lock Screen.
+            </div>
+            <ul class="features">
+                <li>Custom clock fonts (Digital-7, Bebas Neue, Anton) & Stock font revert</li>
+                <li>Adjustable clock font size slider (35-85 pt)</li>
+                <li>Clock text color, shadow removal, and vertical positioning</li>
+                <li>Custom "Slide to unlock" text & transparent slider track</li>
+                <li>Transparent top bar background & hide battery overlay</li>
+                <li>Hide status bar, clock seconds, and camera grabber</li>
+            </ul>
+            <a class="btn-deb" href="debs/com.tweedlex.ios6lockclockfont_1.1.0_iphoneos-arm.deb">Download .deb</a>
+        </div>
+
+        <div class="footer">
+            Developed with ❤️ for iOS 6.1.3 community by Tweedlex
+        </div>
+    </div>
+</body>
+</html>
