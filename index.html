@@ -2,165 +2,343 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tweedlex Repo - iOS 6 Tweaks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tweedlex Cydia Repo</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: #12141a;
-            color: #e4e7eb;
-            display: flex;
-            justify-content: center;
-            padding: 20px 10px;
+            /* Authentic iOS 6 Pinstripe TableView background */
+            background-color: #c5ccd4;
+            background-image: repeating-linear-gradient(
+                0deg,
+                #c5ccd4,
+                #c5ccd4 1px,
+                #cbd2d8 1px,
+                #cbd2d8 2px
+            );
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #000;
+            margin: 0;
+            padding-bottom: 30px;
         }
-        .container {
-            max-width: 520px;
-            width: 100%;
-        }
-        .header {
-            text-align: center;
-            padding: 30px 20px;
-            background: linear-gradient(180deg, #1f2430 0%, #151821 100%);
-            border-radius: 18px;
-            border: 1px solid #2b3242;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,200,255,0.3);
-            margin-bottom: 12px;
-        }
-        h1 { font-size: 24px; color: #fff; margin-bottom: 6px; }
-        p.subtitle { font-size: 14px; color: #8e99a8; margin-bottom: 18px; }
-        .btn-add {
-            display: inline-block;
-            background: linear-gradient(180deg, #00b4db 0%, #0083b0 100%);
-            color: #fff;
-            padding: 12px 26px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            box-shadow: 0 4px 14px rgba(0, 180, 219, 0.4);
-            transition: transform 0.15s ease;
-        }
-        .btn-add:active { transform: scale(0.97); }
-        .section-title {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #7b889b;
-            margin: 20px 8px 10px;
-            font-weight: 700;
-        }
-        .card {
-            background: #181c26;
-            border: 1px solid #282f40;
-            border-radius: 16px;
-            padding: 18px;
-            margin-bottom: 14px;
-        }
-        .card-header {
+
+        /* iOS 6 Classic Navigation Bar */
+        .navbar {
+            height: 44px;
+            background: linear-gradient(to bottom, #7d90a6 0%, #4a617a 50%, #3b526d 51%, #3b526d 100%);
+            border-bottom: 1px solid #2d3e52;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 2px rgba(0, 0, 0, 0.25);
             display: flex;
             align-items: center;
-            gap: 14px;
-            margin-bottom: 10px;
+            justify-content: center;
+            position: relative;
         }
-        .card-title { font-size: 18px; font-weight: 600; color: #fff; }
-        .card-version {
-            background: #252e42;
-            color: #00d2ff;
+
+        .navbar-title {
+            color: #ffffff;
+            font-size: 19px;
+            font-weight: bold;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
+            letter-spacing: -0.3px;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 12px 10px;
+        }
+
+        /* Header Card with Glossy Icon */
+        .repo-banner {
+            display: flex;
+            align-items: center;
+            padding: 14px;
+            background: #ffffff;
+            border: 1px solid #a5abb1;
+            border-radius: 9px;
+            box-shadow: inset 0 1px 0 #fff, 0 1px 2px rgba(0, 0, 0, 0.08);
+            margin-bottom: 18px;
+        }
+
+        .icon-container {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            flex-shrink: 0;
+            margin-right: 14px;
+        }
+
+        .icon-container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Classic iOS Gloss overlay on app icon */
+        .icon-glare {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.15) 100%);
+            border-radius: 12px 12px 50px 50px / 12px 12px 18px 18px;
+            pointer-events: none;
+        }
+
+        .repo-info h1 {
+            font-size: 17px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 3px;
+        }
+
+        .repo-info p {
+            font-size: 12px;
+            color: #555555;
+            line-height: 1.35;
+        }
+
+        /* iOS 6 Etched Section Header */
+        .section-header {
+            font-size: 15px;
+            font-weight: bold;
+            color: #4c566c;
+            text-shadow: 0 1px 0 #ffffff;
+            margin: 14px 12px 6px 12px;
+        }
+
+        /* iOS 6 Grouped Table View */
+        .table-group {
+            background: #ffffff;
+            border: 1px solid #a5abb1;
+            border-radius: 9px;
+            box-shadow: inset 0 1px 0 #fff, 0 1px 2px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .table-cell {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            color: #000;
+        }
+
+        .table-cell:last-child {
+            border-bottom: none;
+        }
+
+        .cell-label {
+            font-weight: bold;
+            color: #000;
+            flex-grow: 1;
+        }
+
+        .cell-value {
+            color: #385487;
+            font-size: 14px;
+            font-family: Courier, monospace;
+            word-break: break-all;
+        }
+
+        /* Tweak Showcase Cell */
+        .tweak-card {
+            padding: 14px;
+        }
+
+        .tweak-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .tweak-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* iOS 6 App Store style Badge */
+        .badge {
+            background: linear-gradient(to bottom, #728ea7 0%, #446487 100%);
+            color: #fff;
             font-size: 11px;
+            font-weight: bold;
             padding: 3px 8px;
             border-radius: 10px;
-            font-weight: 600;
-            margin-left: auto;
+            border: 1px solid #2f4763;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
         }
-        .card-desc { font-size: 13px; color: #a4b1c2; line-height: 1.5; margin-bottom: 14px; }
-        .features {
+
+        .tweak-desc {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .tweak-features {
             list-style: none;
             font-size: 12px;
-            color: #8fa0b5;
+            color: #555;
             margin-bottom: 14px;
+            padding-left: 4px;
         }
-        .features li { margin-bottom: 5px; padding-left: 14px; position: relative; }
-        .features li::before {
-            content: "•";
-            color: #00d2ff;
+
+        .tweak-features li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 14px;
+        }
+
+        .tweak-features li::before {
+            content: "✓";
+            color: #3a628c;
             position: absolute;
             left: 0;
             font-weight: bold;
         }
+
+        /* iOS 6 Action Buttons */
+        .btn-cydia {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 11px 0;
+            background: linear-gradient(to bottom, #7fa5cb 0%, #4b78a4 50%, #3e6893 51%, #45719c 100%);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: bold;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
+            border: 1px solid #284766;
+            border-radius: 6px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+
+        .btn-cydia:active {
+            background: linear-gradient(to bottom, #3e6893 0%, #4b78a4 100%);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
         .btn-deb {
             display: inline-block;
-            background: #262f40;
-            border: 1px solid #37435b;
-            color: #e4e7eb;
-            padding: 8px 16px;
-            border-radius: 10px;
+            padding: 6px 14px;
+            background: linear-gradient(to bottom, #fcfcfc 0%, #e2e2e2 100%);
+            color: #333333;
+            font-size: 12px;
+            font-weight: bold;
+            text-shadow: 0 1px 0 #ffffff;
+            border: 1px solid #999999;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 0 #ffffff, 0 1px 2px rgba(0, 0, 0, 0.1);
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
         }
-        .footer {
+
+        .btn-deb:active {
+            background: #d4d4d4;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* iOS 6 Footer text */
+        .section-footer {
+            font-size: 12px;
+            color: #555555;
+            text-shadow: 0 1px 0 #ffffff;
             text-align: center;
-            font-size: 12px;
-            color: #5c6675;
-            margin-top: 30px;
-        }
-        .url-box {
-            background: #0d1017;
-            border: 1px dashed #30394d;
-            padding: 10px;
-            border-radius: 10px;
-            font-family: monospace;
-            font-size: 12px;
-            color: #61afef;
-            word-break: break-all;
-            margin-top: 12px;
+            margin-top: 24px;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img class="icon" src="CydiaIcon.png" alt="Tweedlex Repo">
-            <h1>Tweedlex Repo</h1>
-            <p class="subtitle">Official Cydia Repository for iOS 6 & Legacy Devices</p>
-            <a class="btn-add" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://tweedlexdev.github.io/cydia-repo/">+ Add to Cydia</a>
-            <div class="url-box">https://tweedlexdev.github.io/cydia-repo/</div>
-        </div>
 
-        <div class="section-title">Available Tweaks</div>
-
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <div class="card-title">iOS 6 Lockscreen Customizer</div>
-                </div>
-                <div class="card-version">v1.1.0</div>
-            </div>
-            <div class="card-desc">
-                All-in-one Swiss Army Knife for iOS 6.1.3 Lock Screen.
-            </div>
-            <ul class="features">
-                <li>Custom clock fonts (Digital-7, Bebas Neue, Anton) & Stock font revert</li>
-                <li>Adjustable clock font size slider (35-85 pt)</li>
-                <li>Clock text color, shadow removal, and vertical positioning</li>
-                <li>Custom "Slide to unlock" text & transparent slider track</li>
-                <li>Transparent top bar background & hide battery overlay</li>
-                <li>Hide status bar, clock seconds, and camera grabber</li>
-            </ul>
-            <a class="btn-deb" href="debs/com.tweedlex.ios6lockclockfont_1.1.0_iphoneos-arm.deb">Download .deb</a>
-        </div>
-
-        <div class="footer">
-            Developed with ❤️ for iOS 6.1.3 community by Tweedlex
-        </div>
+    <!-- iOS 6 Classic Blue Gloss Navigation Bar -->
+    <div class="navbar">
+        <span class="navbar-title">Tweedlex Repo</span>
     </div>
+
+    <div class="container">
+
+        <!-- Top Header Card -->
+        <div class="repo-banner">
+            <div class="icon-container">
+                <img src="CydiaIcon.png" alt="Icon">
+                <div class="icon-glare"></div>
+            </div>
+            <div class="repo-info">
+                <h1>Tweedlex Cydia Repo</h1>
+                <p>Официальный репозиторий твиков для iOS 6.1.3 и старых версий iOS.</p>
+            </div>
+        </div>
+
+        <!-- Add to Cydia Button -->
+        <a class="btn-cydia" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://tweedlexdev.github.io/cydia-repo/">
+            + Добавить репозиторий в Cydia
+        </a>
+
+        <!-- Repository Details Table -->
+        <div class="section-header">АДРЕС ИСТОЧНИКА (URL)</div>
+        <div class="table-group">
+            <div class="table-cell">
+                <span class="cell-label">URL</span>
+                <span class="cell-value">https://tweedlexdev.github.io/cydia-repo/</span>
+            </div>
+            <div class="table-cell">
+                <span class="cell-label">Архитектура</span>
+                <span style="color: #666; font-size: 14px;">iphoneos-arm (iOS 6+)</span>
+            </div>
+        </div>
+
+        <!-- Featured Tweak -->
+        <div class="section-header">ДОСТУПНЫЕ ПАКЕТЫ</div>
+        <div class="table-group tweak-card">
+            <div class="tweak-header">
+                <div class="tweak-name">iOS 6 Lockscreen Customizer</div>
+                <div class="badge">v1.1.0</div>
+            </div>
+            <div class="tweak-desc">
+                Универсальный твик-комбайн для полной кастомизации экрана блокировки iOS 6.1.3.
+            </div>
+            <ul class="tweak-features">
+                <li>Шрифты часов: Digital-7, Bebas Neue, Anton + возврат к стоку</li>
+                <li>Настройка кегля (размера) шрифта от 35 до 85 pt</li>
+                <li>Выбор цвета текста часов и отключение чёрной тени</li>
+                <li>Смещение часов по вертикали (Y-Offset) под любые обои</li>
+                <li>Кастомный текст на слайдере разблокировки</li>
+                <li>Прозрачная направляющая слайдера и прозрачная верхняя панель</li>
+                <li>Скрытие оверлея батареи при зарядке и кнопки камеры</li>
+                <li>Управление из стандартных Настроек устройства</li>
+            </ul>
+            <div style="display: flex; justify-content: flex-end;">
+                <a class="btn-deb" href="debs/com.tweedlex.ios6lockclockfont_1.1.0_iphoneos-arm.deb">
+                    ⬇ Скачать .deb
+                </a>
+            </div>
+        </div>
+
+        <div class="section-footer">
+            Создано с душой для сообщества iOS 6.1.3<br>
+            © 2026 Tweedlex
+        </div>
+
+    </div>
+
 </body>
 </html>
