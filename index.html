@@ -13,14 +13,14 @@
         }
 
         body {
-            /* Authentic iOS 6 Pinstripe TableView background */
-            background-color: #c5ccd4;
+            /* iOS 6 Subtle Olive-Sage Pinstripe background */
+            background-color: #c1c8bd;
             background-image: repeating-linear-gradient(
                 0deg,
-                #c5ccd4,
-                #c5ccd4 1px,
-                #cbd2d8 1px,
-                #cbd2d8 2px
+                #c1c8bd,
+                #c1c8bd 1px,
+                #c8cfc4 1px,
+                #c8cfc4 2px
             );
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: #000;
@@ -28,12 +28,12 @@
             padding-bottom: 30px;
         }
 
-        /* iOS 6 Classic Navigation Bar */
+        /* iOS 6 Classic Olive-Green Glossy Navigation Bar */
         .navbar {
             height: 44px;
-            background: linear-gradient(to bottom, #7d90a6 0%, #4a617a 50%, #3b526d 51%, #3b526d 100%);
-            border-bottom: 1px solid #2d3e52;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 2px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(to bottom, #728369 0%, #526349 50%, #44543b 51%, #46563d 100%);
+            border-bottom: 1px solid #303d27;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -54,27 +54,28 @@
             padding: 12px 10px;
         }
 
-        /* Header Card with Glossy Icon */
+        /* Header Card */
         .repo-banner {
             display: flex;
             align-items: center;
             padding: 14px;
             background: #ffffff;
-            border: 1px solid #a5abb1;
+            border: 1px solid #a4ada0;
             border-radius: 9px;
-            box-shadow: inset 0 1px 0 #fff, 0 1px 2px rgba(0, 0, 0, 0.08);
-            margin-bottom: 18px;
+            box-shadow: inset 0 1px 0 #fff, 0 1px 3px rgba(0, 0, 0, 0.08);
+            margin-bottom: 16px;
         }
 
         .icon-container {
             position: relative;
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+            width: 62px;
+            height: 62px;
+            border-radius: 13px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
             overflow: hidden;
             flex-shrink: 0;
             margin-right: 14px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
         }
 
         .icon-container img {
@@ -83,44 +84,44 @@
             display: block;
         }
 
-        /* Classic iOS Gloss overlay on app icon */
         .icon-glare {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 50%;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.15) 100%);
-            border-radius: 12px 12px 50px 50px / 12px 12px 18px 18px;
+            height: 48%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.08) 100%);
+            border-radius: 13px 13px 40px 40px / 13px 13px 16px 16px;
             pointer-events: none;
         }
 
         .repo-info h1 {
             font-size: 17px;
             font-weight: bold;
-            color: #000;
+            color: #1a2215;
             margin-bottom: 3px;
         }
 
         .repo-info p {
             font-size: 12px;
-            color: #555555;
+            color: #535d4e;
             line-height: 1.35;
         }
 
         /* iOS 6 Etched Section Header */
         .section-header {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
-            color: #4c566c;
-            text-shadow: 0 1px 0 #ffffff;
+            color: #43513a;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
             margin: 14px 12px 6px 12px;
+            letter-spacing: -0.2px;
         }
 
         /* iOS 6 Grouped Table View */
         .table-group {
             background: #ffffff;
-            border: 1px solid #a5abb1;
+            border: 1px solid #a4ada0;
             border-radius: 9px;
             box-shadow: inset 0 1px 0 #fff, 0 1px 2px rgba(0, 0, 0, 0.08);
             overflow: hidden;
@@ -129,7 +130,7 @@
 
         .table-cell {
             padding: 12px 14px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e1e5de;
             display: flex;
             align-items: center;
             font-size: 15px;
@@ -142,18 +143,19 @@
 
         .cell-label {
             font-weight: bold;
-            color: #000;
+            color: #222b1c;
             flex-grow: 1;
         }
 
         .cell-value {
-            color: #385487;
+            color: #3b5030;
             font-size: 14px;
             font-family: Courier, monospace;
             word-break: break-all;
+            font-weight: 600;
         }
 
-        /* Tweak Showcase Cell */
+        /* Tweak Showcase Card */
         .tweak-card {
             padding: 14px;
         }
@@ -168,25 +170,25 @@
         .tweak-name {
             font-size: 16px;
             font-weight: bold;
-            color: #000;
+            color: #1a2215;
         }
 
-        /* iOS 6 App Store style Badge */
+        /* iOS 6 Olive Badge */
         .badge {
-            background: linear-gradient(to bottom, #728ea7 0%, #446487 100%);
+            background: linear-gradient(to bottom, #697c60 0%, #4a5c41 100%);
             color: #fff;
             font-size: 11px;
             font-weight: bold;
             padding: 3px 8px;
             border-radius: 10px;
-            border: 1px solid #2f4763;
+            border: 1px solid #33432b;
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
-            text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.6);
         }
 
         .tweak-desc {
             font-size: 13px;
-            color: #444;
+            color: #485243;
             line-height: 1.4;
             margin-bottom: 12px;
         }
@@ -194,7 +196,7 @@
         .tweak-features {
             list-style: none;
             font-size: 12px;
-            color: #555;
+            color: #4d5747;
             margin-bottom: 14px;
             padding-left: 4px;
         }
@@ -202,65 +204,65 @@
         .tweak-features li {
             margin-bottom: 5px;
             position: relative;
-            padding-left: 14px;
+            padding-left: 15px;
         }
 
         .tweak-features li::before {
             content: "✓";
-            color: #3a628c;
+            color: #485b3f;
             position: absolute;
             left: 0;
             font-weight: bold;
         }
 
-        /* iOS 6 Action Buttons */
+        /* iOS 6 Muted Olive-Green Button */
         .btn-cydia {
             display: block;
             width: 100%;
             text-align: center;
             padding: 11px 0;
-            background: linear-gradient(to bottom, #7fa5cb 0%, #4b78a4 50%, #3e6893 51%, #45719c 100%);
+            background: linear-gradient(to bottom, #728567 0%, #536749 50%, #45593b 51%, #495e3f 100%);
             color: #ffffff;
             font-size: 15px;
             font-weight: bold;
-            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
-            border: 1px solid #284766;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.65);
+            border: 1px solid #2f4025;
             border-radius: 6px;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.15);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 1px 2px rgba(0, 0, 0, 0.15);
             text-decoration: none;
             cursor: pointer;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .btn-cydia:active {
-            background: linear-gradient(to bottom, #3e6893 0%, #4b78a4 100%);
+            background: linear-gradient(to bottom, #45593b 0%, #536749 100%);
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .btn-deb {
             display: inline-block;
             padding: 6px 14px;
-            background: linear-gradient(to bottom, #fcfcfc 0%, #e2e2e2 100%);
-            color: #333333;
+            background: linear-gradient(to bottom, #fcfcfc 0%, #e1e5de 100%);
+            color: #35422d;
             font-size: 12px;
             font-weight: bold;
             text-shadow: 0 1px 0 #ffffff;
-            border: 1px solid #999999;
+            border: 1px solid #99a393;
             border-radius: 4px;
-            box-shadow: inset 0 1px 0 #ffffff, 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 0 #ffffff, 0 1px 2px rgba(0, 0, 0, 0.08);
             text-decoration: none;
         }
 
         .btn-deb:active {
-            background: #d4d4d4;
+            background: #d4dbd0;
             box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
         }
 
         /* iOS 6 Footer text */
         .section-footer {
             font-size: 12px;
-            color: #555555;
-            text-shadow: 0 1px 0 #ffffff;
+            color: #515c4c;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
             text-align: center;
             margin-top: 24px;
             line-height: 1.5;
@@ -269,22 +271,22 @@
 </head>
 <body>
 
-    <!-- iOS 6 Classic Blue Gloss Navigation Bar -->
+    <!-- iOS 6 Muted Olive-Green Navigation Bar -->
     <div class="navbar">
         <span class="navbar-title">Tweedlex Repo</span>
     </div>
 
     <div class="container">
 
-        <!-- Top Header Card -->
+        <!-- Top Header Card with User's TWD Avatar -->
         <div class="repo-banner">
             <div class="icon-container">
-                <img src="CydiaIcon.png" alt="Icon">
+                <img src="CydiaIcon.png" alt="TWD Icon">
                 <div class="icon-glare"></div>
             </div>
             <div class="repo-info">
                 <h1>Tweedlex Cydia Repo</h1>
-                <p>Официальный репозиторий твиков для iOS 6.1.3 и старых версий iOS.</p>
+                <p>Официальный репозиторий твиков для iOS 6 и старых версий iOS.</p>
             </div>
         </div>
 
