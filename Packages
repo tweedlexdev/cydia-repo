@@ -1,14 +1,14 @@
 Package: com.tweedlex.swissknife6
-Version: 1.3.1
+Version: 1.3.2
 Architecture: iphoneos-arm
 Maintainer: Tweedlex
-Installed-Size: 424
+Installed-Size: 428
 Depends: mobilesubstrate, preferenceloader
-Filename: ./debs/com.tweedlex.swissknife6_1.3.1_iphoneos-arm.deb
-Size: 131440
-MD5sum: 3fded4a5290caacdecb586041a471edd
-SHA1: 72810ec6bbade6e7752f073b49d5922803969f23
-SHA256: 03b9e977a087bd3fe45be0d150158d796c3e33ce0ba2717e2ea78ab08545e5dd
+Filename: ./debs/com.tweedlex.swissknife6_1.3.2_iphoneos-arm.deb
+Size: 132412
+MD5sum: 21aa6084769583c788573cd8639429c9
+SHA1: 73a0913ba6ab4623dc21a02c8ac0ee922f9b5a3e
+SHA256: 54f429f4457fd12c970425b6da05ba4f872853d18d787641dfec6ff15fb6c286
 Section: Tweaks
 Description: All-in-one Swiss Army Knife customization suite for iOS 6: Lock screen, SpringBoard, and system UI elements.
 Author: Tweedlex
